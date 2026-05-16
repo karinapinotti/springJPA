@@ -19,7 +19,7 @@ public class User {
     @Column(name = "user_email", length = 255, nullable = false, unique = true)
     private String email;
 
-    @ManyToMany(mappedBy = "user")
+    @ManyToMany(mappedBy = "users")
     private List<Session> sessions;
 
     public Integer getUserId() {
@@ -44,5 +44,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Session> getSessions() {
+        return sessions;
+    }
+
+    public void setSessions(List<Session> sessions) {
+        this.sessions = sessions;
     }
 }

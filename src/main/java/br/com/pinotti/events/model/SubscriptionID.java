@@ -5,6 +5,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 @Embeddable
 public class SubscriptionID implements Serializable {
@@ -31,5 +32,18 @@ public class SubscriptionID implements Serializable {
 
     public void setSession(Session session) {
         this.session = session;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof SubscriptionID that)) return false;
+        return Objects.equals(user, that.user) &&
+                Objects.equals(session, that.session);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(user, session);
     }
 }
