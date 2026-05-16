@@ -1,0 +1,35 @@
+package br.com.pinotti.events.model;
+
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+import java.io.Serializable;
+
+@Embeddable
+public class SubscriptionID implements Serializable {
+
+    @ManyToOne
+    @JoinColumn(name = "subscribed_user_id")
+    private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "session_id")
+    private Session session;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Session getSession() {
+        return session;
+    }
+
+    public void setSession(Session session) {
+        this.session = session;
+    }
+}
