@@ -1,2 +1,15 @@
-/mvnw text eol=lf
-*.cmd text eol=crlf
+*.java linguist-detectable=true
+*.kt linguist-detectable=true
+*.groovy linguist-detectable=true
+
+*.html linguist-detectable=false
+*.css linguist-detectable=false
+*.scss linguist-detectable=false
+*.js linguist-detectable=false
+*.ts linguist-detectable=false
+*.vue linguist-detectable=false
+
+*.md linguist-detectable=false
+*.yml linguist-detectable=false
+*.yaml linguist-detectable=false
+*.json linguist-detectable=false
